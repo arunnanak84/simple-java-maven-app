@@ -29,7 +29,7 @@ pipeline {
        }
         stage('push') {
             steps {
-                sh 'curl -uadmin:password -T my-app-1.0-SNAPSHOT.jar "http://172.16.4.87:8081/artifactory/generic-local/my-app.jar"'
+                sh 'curl -u admin:password -T my-app-1.0-SNAPSHOT.jar "http://172.16.4.87:8081/artifactory/generic-local/my-app.jar"'
             }
         }
     }
