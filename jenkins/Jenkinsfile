@@ -32,6 +32,11 @@ pipeline {
                 sh 'curl -u admin:password -T /var/jenkins_home/workspace/arun/target/my-app-1.0-SNAPSHOT.jar "http://172.16.4.87:8081/artifactory/generic-local/my-app.jar"'
             }
         }
-    }
+        stage('Test') {
+            steps {
+                sh 'mvn -DBranch=develop-1.0 -e -B sonar:sonar -Dsonar.host.url=http://172.16.4.87:9000 -Dsonar.login=acf13946c6bc009b57e0df189199837f20849dc1 -Dsonar.scm.disabled=true -X
+            }
+        }
+            }
     
 }
