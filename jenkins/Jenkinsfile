@@ -25,6 +25,13 @@ pipeline {
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }
+       
+       }
+        stage('push') {
+            steps {
+                curl -uadmin:password -T my-app-1.0-SNAPSHOT.jar "http://172.16.4.87:8081/artifactory/generic-local/my-app.jar"
+            }
         }
     }
+    
 }
