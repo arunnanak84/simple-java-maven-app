@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn -DBranch=develop-1.0 -e -B sonar:sonar -Dsonar.host.url=http://172.16.4.87:9000 -Dsonar.login=acf13946c6bc009b57e0df189199837f20849dc1 -Dsonar.scm.disabled=true -X
+                sh 'mvn -DBranch=develop-1.0 -e -B sonar:sonar -Dsonar.host.url=http://172.16.4.87:9000 -Dsonar.login=5c07b656533d1b31555109e98f402e67f7953304 -Dsonar.scm.disabled=true -X
             }
         }
             }
